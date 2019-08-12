@@ -1,0 +1,355 @@
+! to override any if the settings below, use the file
+! /etc/X11/app-defaults/URxvt-local
+
+! a sane non-Xft font
+!URxvt.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+
+! uncomment to get rxvt-unicode terminfo compatibility. Also read 
+! README.Debian.gz and generate the terminfo file in this case.
+!URxvt.termName: xterm-256color
+!URxvt.termName: rxvt-unicode
+
+! 640x480
+!URxvt.font: xft:Monospace:pixelsize=10
+! 800x600
+!
+!URxvt.font: xft:Monospace:pixelsize=9
+! 1024x768
+!URxvt.font: xft:Monospace:pixelsize=11
+!URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=11
+! 1152x864
+!URxvt.font: xft:Monospace:pixelsize=12
+! 1280x1024
+!URxvt.font: xft:Monospace:pixelsize=14
+
+! Color/font settings like in Debians uxterm
+!
+!URxvt.color0: black
+!URxvt.color1: red3
+!URxvt.color2: green3
+!URxvt.color3: yellow3
+!URxvt.color4: DodgerBlue1
+!URxvt.color5: magenta3
+!URxvt.color6: cyan3
+!URxvt.color7: gray90
+!URxvt.color8: gray50
+!URxvt.color9: red
+!URxvt.color10: green
+!URxvt.color11: yellow
+!URxvt.color12: SteelBlue1
+!URxvt.color13: magenta
+!URxvt.color14: cyan
+!URxvt.color15: white
+!URxvt.colorUL: white
+!URxvt.colorBD: yellow
+!URxvt.reverseVideo: true
+
+
+! Xterm some default configurations
+! note: these duplicates are because
+xterm*reverseVideo: true
+aterm*reverseVideo: true
+rxvt*reverseVideo: true
+! Use 256 colors so that it can look better
+! update: this breaks our zsh prompt
+!xterm*termName: xterm-256color
+! include utf8 support
+xterm*locale: true
+! Making xterms Alt key behaves as on other terminal emulators
+! terminal emulators such as gnome-terminal and konsole, which uses Alt as modifier to sends ^[ (escape} character.
+xterm*metaSendsEscape: true
+xterm*eightBitInput: false
+! fix the backspace key (untested)
+!XTerm*backarrowKey: false
+!XTerm*ttyModes: erase ^?
+! savelines, default is 1024
+xterm*saveLines: 4096
+! font settings
+xterm*faceName: xft:Source\ Code\ Pro\ Medium:pixelsize=15:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium
+! enable bell
+xterm*bellIsUrgent: true
+xterm*borderWidth:0
+
+
+
+
+
+! examples for custom keysyms overrides
+
+!URxvt.keysym.KP_Up: ^[[A
+!URxvt.keysym.KP_Right: ^[[C
+!URxvt.keysym.KP_Left: ^[[D
+!URxvt.keysym.KP_Down: ^[[B
+!URxvt.keysym.KP_Insert: ^[[2~
+!URxvt.keysym.KP_Delete: ^[[3~
+!URxvt.keysym.KP_Add: +
+!URxvt.keysym.KP_Subtract: -
+!URxvt.keysym.KP_Multiply: *
+!URxvt.keysym.KP_Divide: /
+!URxvt.keysym.KP_Enter: ^M
+
+! Seems like this solves problems of copypasting in chromium (maybe requires a newer > wheezy version of URxvt)
+!URxvt.clipboard.autocopy:   true
+
+! some settings by the local admin which should override the above ones
+!#include "URxvt-local"
+
+! Disabled because a bug in the ^ char that not appears, at least for me, FIXME
+!URxvt*perl-ext-common:     default,tabbed
+!URxvt.tabbed.tab-bg:       255
+!URxvt.tabbed.tab-fg:       7
+
+!URxvt.termName: xterm-256color
+!URxvt*termName: rxvt-256color
+
+
+!URxvt*foreground: #f2f2f2
+!URxvt*background: #101010
+!URxvt*background: #000000
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+
+!URxvt*color0:    #000000
+!URxvt*color1:    #e52222
+!URxvt*color2:    #a6e32d
+!!! yellow that looks orange:
+!URxvt*color3:    #fc951e
+!!URxvt*color3:    #ffff16
+!!! blue that looks purple 
+!URxvt*color4:    #c48dff
+!!URxvt*color4:    #0086db
+!URxvt*color5:    #fa2573
+!URxvt*color6:    #67d9f0
+!URxvt*color7:    #f2f2f2
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+
+!URxvt*color8:    #747474
+!URxvt*color9:    #f99286
+!URxvt*color10:    #c3f786
+!URxvt*color11:    #fcfbcc
+!URxvt*color12:    #b6defb
+!URxvt*color13:    #fba1fb
+!URxvt*color14:    #d7d9fc
+!URxvt*color15:    #e2e2e2
+
+
+! test
+!URxvt*color8:    #000000
+!URxvt*color9:    #e52222
+!URxvt*color10:    #a6e32d
+
+!URxvt*color11:    #fc951e
+!!URxvt*color11:    #ffff16
+!URxvt*color12:    #c48dff
+!!URxvt*color12:    #0086db
+
+!URxvt*color13:    #fa2573
+!URxvt*color14:    #67d9f0
+!URxvt*color15:    #f2f2f2
+
+
+! test 
+!URxvt*perl-ext: default
+!URxvt*perl-ext-common: default,matcher,tabbed
+!! Important: do NOT use tabbed, it gives a lot of problems (slow/unresponsive blink of the cursor, shift + pageup/down not works for scroll terminal, wrong compatible size of columns, etc..)
+!URxvt*perl-ext-common: default,matcher
+!URxvt*urlLauncher:/etc/alternatives/x-www-browser
+! if we use "tabbed", we must set this standard geometry correction
+!URxvt.geometry:82x26
+
+!! colors for tabbed feature
+!URxvt.tabbed.tabbar-fg: 4
+!URxvt.tabbed.tab-fg:    8
+!URxvt.tabbed.tab-bg:    0
+
+
+
+! candy original homemade colors
+!URxvt*color0:    #000000
+!URxvt*color1:    #e50000
+!URxvt*color2:    #97e300
+!URxvt*color3:    #fc8700
+!URxvt*color4:    #8c21ff
+!URxvt*color5:    #fa005c
+!URxvt*color6:    #00c8fc
+!URxvt*color7:    #ffffff
+
+!URxvt*color8:    #0d0d0d
+!URxvt*color9:    #ff4040
+!URxvt*color10:    #c2fc4c
+!URxvt*color11:    #ffa238
+!URxvt*color12:    #b672ff
+!URxvt*color13:    #ff5996
+!URxvt*color14:    #a1efff
+!URxvt*color15:    #f2f2f2
+
+
+! my changes:
+!! transparency
+!URxvt*background: rgba:0000/0000/0200/c800
+!URxvt*background: rgba:0000/0000/0000/c800
+
+
+!URxvt*color0:    #000000
+!URxvt*color1:    #e50000
+!URxvt*color2:    #87cc00
+!URxvt*color3:    #fc8700
+!URxvt*color4:    #6720ff
+!URxvt*color5:    #fa00cc
+!URxvt*color6:    #00c8fc
+!URxvt*color7:    #d8d8d8
+
+!URxvt*color8:    #8a8a8a
+!URxvt*color9:    #ff4040
+!URxvt*color10:    #c2fc4c
+!URxvt*color11:    #ffc342
+!URxvt*color12:    #9e71ff
+!URxvt*color13:    #ff58e0
+!URxvt*color14:    #a1efff
+!URxvt*color15:    #ffffff
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,
+
+
+! make things works on x-terminal-emulator too:
+x-terminal-emulator*depth: 32
+x-terminal-emulator.saveLines: 50000
+x-terminal-emulator.title: Terminal
+x-terminal-emulator.fading: 0
+x-terminal-emulator.scrollBar: false
+x-terminal-emulator.scrollBar_right: true
+x-terminal-emulator.scrollBar_floating: true
+x-terminal-emulator.cursorBlink: true
+x-terminal-emulator.jumpScroll: true
+x-terminal-emulator.skipScroll: true
+x-terminal-emulator.print-pipe: echo
+x-terminal-emulator.printerCommand: echo
+x-terminal-emulator.visualBell: true
+x-terminal-emulator.font: xft:Source\ Code\ Pro\ Medium:pixelsize=15:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium
+x-terminal-emulator*foreground: #f2f2f2
+x-terminal-emulator*perl-ext: default
+x-terminal-emulator*perl-ext-common: default,matcher
+x-terminal-emulator*urlLauncher:web-launcher
+x-terminal-emulator*background: rgba:0000/0000/0000/c800
+
+
+x-terminal-emulator*color0:    #000000
+x-terminal-emulator*color1:    #e50000
+x-terminal-emulator*color2:    #87cc00
+x-terminal-emulator*color3:    #fc8700
+x-terminal-emulator*color4:    #6720ff
+x-terminal-emulator*color5:    #fa00cc
+x-terminal-emulator*color6:    #00c8fc
+x-terminal-emulator*color7:    #d8d8d8
+
+x-terminal-emulator*color8:    #8a8a8a
+x-terminal-emulator*color9:    #ff4040
+x-terminal-emulator*color10:    #c2fc4c
+x-terminal-emulator*color11:    #ffc342
+x-terminal-emulator*color12:    #9e71ff
+x-terminal-emulator*color13:    #ff58e0
+x-terminal-emulator*color14:    #a1efff
+x-terminal-emulator*color15:    #ffffff
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,
+urxvt*depth: 32
+urxvt.saveLines: 50000
+urxvt.title: Terminal
+urxvt.fading: 0
+urxvt.scrollBar: false
+urxvt.scrollBar_right: true
+urxvt.scrollBar_floating: true
+urxvt.cursorBlink: true
+urxvt.jumpScroll: true
+urxvt.skipScroll: true
+urxvt.print-pipe: echo
+urxvt.printerCommand: echo
+urxvt.visualBell: true
+urxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=15:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium
+urxvt*foreground: #f2f2f2
+urxvt*perl-ext: default
+urxvt*perl-ext-common: default,matcher
+urxvt*urlLauncher:web-launcher
+urxvt*background: rgba:0000/0000/0000/c800
+
+
+urxvt*color0:    #000000
+urxvt*color1:    #e50000
+urxvt*color2:    #87cc00
+urxvt*color3:    #fc8700
+urxvt*color4:    #6720ff
+urxvt*color5:    #fa00cc
+urxvt*color6:    #00c8fc
+urxvt*color7:    #d8d8d8
+
+urxvt*color8:    #8a8a8a
+urxvt*color9:    #ff4040
+urxvt*color10:    #c2fc4c
+urxvt*color11:    #ffc342
+urxvt*color12:    #9e71ff
+urxvt*color13:    #ff58e0
+urxvt*color14:    #a1efff
+urxvt*color15:    #ffffff
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,
+! transparencies in composite, oh yea!
+rxvt-unicode*depth: 32
+rxvt-unicode.saveLines: 50000
+rxvt-unicode.title: Terminal
+rxvt-unicode.fading: 0
+rxvt-unicode.scrollBar: false
+rxvt-unicode.scrollBar_right: true
+rxvt-unicode.scrollBar_floating: true
+rxvt-unicode.cursorBlink: true
+rxvt-unicode.jumpScroll: true
+rxvt-unicode.skipScroll: true
+rxvt-unicode.print-pipe: echo
+rxvt-unicode.printerCommand: echo
+rxvt-unicode.visualBell: true
+rxvt-unicode.font: xft:Source\ Code\ Pro\ Medium:pixelsize=15:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium
+rxvt-unicode*foreground: #f2f2f2
+!rxvt-unicode.fading: 0
+!rxvt-unicode.fading: 0
+!urxvt.shading: 40
+!urxvt.tintColor: white
+!urxvt.inheritPixmap: true
+rxvt-unicode*perl-ext: default
+rxvt-unicode*perl-ext-common: default,matcher
+rxvt-unicode*urlLauncher:web-launcher
+rxvt-unicode*background: rgba:0000/0000/0000/c800
+
+
+rxvt-unicode*color0:    #000000
+rxvt-unicode*color1:    #e50000
+rxvt-unicode*color2:    #87cc00
+rxvt-unicode*color3:    #fc8700
+rxvt-unicode*color4:    #6720ff
+rxvt-unicode*color5:    #fa00cc
+rxvt-unicode*color6:    #00c8fc
+rxvt-unicode*color7:    #d8d8d8
+
+rxvt-unicode*color8:    #8a8a8a
+rxvt-unicode*color9:    #ff4040
+rxvt-unicode*color10:    #c2fc4c
+rxvt-unicode*color11:    #ffc342
+rxvt-unicode*color12:    #9e71ff
+rxvt-unicode*color13:    #ff58e0
+rxvt-unicode*color14:    #a1efff
+rxvt-unicode*color15:    #ffffff
