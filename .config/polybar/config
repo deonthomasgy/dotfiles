@@ -336,7 +336,9 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 2
+interval = 0.5
+thermal-zone = 5
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 warn-temperature = 75
 
 format = <ramp> <label>
@@ -344,8 +346,8 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label = CPU: %temperature-c%
+label-warn = CPU: %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
