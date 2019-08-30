@@ -208,4 +208,4 @@ bindsym $mod+CTRL+Left workspace prev
 bindsym $mod+CTRL+Right workspace next
 
 #Launch Program at Start
-exec --no-startup-id i3-msg 'workspace 7; exec /usr/bin/google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/google-chrome-stable'
