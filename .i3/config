@@ -207,6 +207,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id xbindkeys
 exec --no-startup-id alarm-clock-applet
+exec --no-startup-id caffeine
 
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 
