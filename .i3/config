@@ -102,29 +102,17 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 "1: TERMINALS"
-set $ws2 "2: TERMINALS"
-set $ws3 "3: GITK/NPM"
-set $ws4 "4: TERMINAL/PHP"
-set $ws5 "5: TERMINAL/JS"
-set $ws6 "6: CHROMIUM"
-set $ws7 "7: POSTMAN"
-set $ws8 "8: CHROME"
-set $ws9 "9: FIREFOX"
-set $ws10 "10: TERMINALS"
-
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 bindsym $mod+CTRL+1 workspace 11
 bindsym $mod+CTRL+2 workspace 12
 bindsym $mod+CTRL+3 workspace 13
@@ -135,21 +123,16 @@ bindsym $mod+CTRL+7 workspace 17
 bindsym $mod+CTRL+8 workspace 18
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-
-assign [class="Chromium"] $ws6
-assign [class="Postman"] $ws7
-assign [class="Google-chrome"] $ws8
-assign [class="^Firefox$"] $ws9
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,8 +167,30 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Run polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+
+
+fake-outputs 1920x1080+0+0,1920x1080+1920+0,1920x1080+0+1080,1920x1080+1920+1080
+workspace 1 output fake-0
+workspace 2 output fake-0
+workspace 3 output fake-0
+workspace 4 output fake-0
+workspace 5 output fake-1
+workspace 6 output fake-1
+workspace 7 output fake-1
+workspace 8 output fake-1
+workspace 9 output fake-2
+workspace 10 output fake-2
+workspace 11 output fake-2
+workspace 12 output fake-2
+workspace 13 output fake-3
+workspace 14 output fake-3
+workspace 15 output fake-3
+workspace 16 output fake-3
 
 # Xresources, xmodmap, start urxvt daemon
 exec --no-startup-id "/usr/bin/setxkbmap -model pc105 -layout us -variant altgr-intl,qwerty -option grp:menu_toggle,grp_led:caps && /usr/bin/xmodmap ~/.Xmodmap"
@@ -225,8 +230,6 @@ bindsym $mod+CTRL+Left workspace prev
 bindsym $mod+CTRL+Right workspace next
 
 #Launch Program at Start
-#exec --no-startup-id i3-msg 'workspace 8: CHROME; exec /usr/bin/google-chrome-stable'
-exec --no-startup-id i3-msg 'exec /usr/bin/google-chrome-stable'
-exec --no-startup-id i3-msg 'exec /usr/bin/postman'
-exec --no-startup-id i3-msg 'exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 5; exec /usr/bin/google-chrome'
+exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/urxvt'
+exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/urxvt'
