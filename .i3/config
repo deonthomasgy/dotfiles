@@ -173,6 +173,8 @@ bar {
         status_command i3status
 }
 
+#keyboard layout
+exec setxkbmap -layout 'us,' -variant 'altgr-intl,' -model 'evdev'
 
 fake-outputs 1920x1080+0+0,1920x1080+1920+0,1920x1080+0+1080,1920x1080+1920+1080
 workspace 1 output fake-0
