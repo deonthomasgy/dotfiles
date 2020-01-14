@@ -149,7 +149,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class="Chromium"] $ws6
 assign [class="Postman"] $ws7
 assign [class="Google-chrome"] $ws8
-assign [class="^Firefox$"] $ws9
+assign [class="^firefox$"] $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,7 +188,8 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Xresources, xmodmap, start urxvt daemon
-exec --no-startup-id "/usr/bin/setxkbmap -model pc105 -layout us -variant altgr-intl,qwerty -option grp:menu_toggle,grp_led:caps && /usr/bin/xmodmap ~/.Xmodmap"
+exec --no-startup-id "/usr/bin/setxkbmap -model pc105 -layout 'us,' -variant 'altgr-intl,qwerty' -option grp:menu_toggle,grp_led:caps && /usr/bin/xmodmap ~/.Xmodmap"
+
 
 # Set background
 exec --no-startup-id "/usr/bin/feh --bg-scale ~/.i3/wallpaper.jpg"
@@ -217,9 +218,10 @@ exec_always --no-startup-id fix_xcursor
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 #Google Chrome
-bindsym $mod+CTRL+c exec "/usr/bin/google-chrome"
+bindsym $mod+CTRL+c exec "/usr/bin/google-chrome-stable"
 bindsym $mod+CTRL+Shift+c exec "/usr/bin/chromium"
 bindsym $mod+CTRL+l exec "/usr/bin/i3lock -i ~/.i3/lock.png"
+bindsym $mod+CTRL+s exec "/usr/bin/systemctl suspend"
 
 bindsym $mod+CTRL+Left workspace prev
 bindsym $mod+CTRL+Right workspace next
@@ -227,6 +229,6 @@ bindsym $mod+CTRL+Right workspace next
 #Launch Program at Start
 #exec --no-startup-id i3-msg 'workspace 8: CHROME; exec /usr/bin/google-chrome-stable'
 exec --no-startup-id i3-msg 'exec /usr/bin/google-chrome-stable'
-exec --no-startup-id i3-msg 'exec /usr/bin/postman'
-exec --no-startup-id i3-msg 'exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
+#exec --no-startup-id i3-msg 'exec /usr/bin/postman'
+#exec --no-startup-id i3-msg 'exec /usr/bin/chromium'
+#exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
